@@ -1,27 +1,27 @@
 <?php
 include_once "koneksi.php";
-$pass = password_hash('123', PASSWORD_BCRYPT);
-$query = "INSERT INTO tbl_pengguna (
+$password = password_hash('123', PASSWORD_BCRYPT);
+$query = "INSERT INTO tabel_pengguna(
     username,
     password,
     nama_lengkap,
     email,
     jabatan,
     hak_akses
-)
-VALUES (
+    )
+    VALUES(
     'admin',
-    '$pass',
-    'Administartor Web',
+    '$password',
+    'Administrator web',
     'admin@gmail.com',
-    'admin',
-    'admin'
-)
-";
-if($koneksi -> query($query)){
-    echo "Data User berhasil ditambah";
-}else {
-    echo "Data User gagal ditambah";
-}
-mysqli_close($koneksi);
-?>
+    'Administator',
+    'Admin'
+    )
+    ";
+    if($koneksi->query($query)){
+        echo "Data User Berhasil Ditambah";
+    }else{
+        echo "Data User Gagal Ditambah";
+    }
+    mysqli_close($koneksi);
+    ?>
